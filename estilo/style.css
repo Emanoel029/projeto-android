@@ -55,7 +55,7 @@ header > p {
   padding-left: 10px;/*p não ficar pegando na lateral esquerda quando diminuir*/
   margin: auto; /*P centralizar o paragrao q virou um bloco devido o max*/
   text-shadow: px 2px 0px rgba(0, 0, 0, 0.268); /*Sombra*/
-  margin-bottom: 20px; /*Para dar um espaço em baixo p o menu quando diminuir a tela*/
+  padding-bottom: 50px; /*Para dar um espaço em baixo p o menu quando diminuir a tela*/
 }
 
 header > h1 {
