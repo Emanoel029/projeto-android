@@ -1,0 +1,211 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+@font-face{
+  font-family: 'Android';
+  src: url("../fontes/idroid.otf") format('opentype');
+  font-weight: normal;
+}
+/*OBS: ROOT é a raiz da arvore do documento Tudo que é feito aqui serve para o documento inteiro. É como se fosse uma área global.
+        Toda variável em CSS tem que começar com dois traços --*/
+:root {
+  --cor0:#c5ebd6;
+  --cor1:#83e1ab;
+  --cor2:#3ddc84;
+  --cor3:#2fa866;
+  --cor4:#1a5c37;
+  --cor5:#063d1e;
+
+  --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+  --fonte-destaque: 'Bebas Neue', sans-serif, cursive;
+  --fonte-android: 'Android', cursive;
+}
+/* O asterisco é um configuração global q vale para todos os elementos do HTML*/
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body{
+  background-color: var(--cor0);
+  font-family: var(--fonte-padrao);
+}
+
+a.externa::after { /*Para ficar a figura da correntinha nos links*/
+  content: '\00A0\1F517';
+}
+
+
+header {
+  /*background-image está fazendo degradê*/
+  background-image: linear-gradient(to bottom, var(--cor3), var(--cor5));
+  min-height: 150px; /*Altura mínima do header*/
+  text-align: center; /*conteúdo do header no centro*/
+  padding-top: 40px; /*desgruta o texto do header de cima*/
+
+}
+
+header > p {
+  color: white;
+  font-size: 1.2em; /*Aumenta o tamanho da fonte do paragrafo do header*/
+  font-family: var(--fonte-padrao);
+  max-width: 500px; /*para centralizar o paragrafo do header, só q vira um bloco */
+  padding-right: 10px; /*p não ficar pegando na lateral direita quando diminuir*/
+  padding-left: 10px;/*p não ficar pegando na lateral esquerda quando diminuir*/
+  margin: auto; /*P centralizar o paragrao q virou um bloco devido o max*/
+  text-shadow: px 2px 0px rgba(0, 0, 0, 0.268); /*Sombra*/
+  margin-bottom: 20px; /*Para dar um espaço em baixo p o menu quando diminuir a tela*/
+}
+
+header > h1 {
+  color: white;
+  font-size: 3em; /*Aumenta o tamanho da fonte do h1 do header*/
+  font-weight: normal; /*tirando o negrito dos h1 do header*/
+  font-family: var(--fonte-destaque);
+  margin-bottom: 20px; /*Espaço entre os textos do header*/
+  text-shadow: px 2px 0px rgba(0, 0, 0, 0.268); /*Sombra*/
+}
+
+nav {
+  background-color: var(--cor5);
+  padding: 10px;/*Para ele ficar mais grodinho*/
+  box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.337); /*Sombra*/
+}
+
+nav > a {
+  color: white;
+  padding: 10px; /*Para ele ficar mais grodinho o conteúdo*/
+  text-decoration: none; /*Para tirar o sublinhado do link*/
+  font-weight: bold; /*Negrito no link*/
+  border-radius: 5px; /*Dar uma arredendada*/
+  transition-duration: 0.7s; /*Transição quando passa o mouse*/
+}
+
+nav > a:hover{
+  background-color: var(--cor3);/*Quando passar o mouse em cima muda d cor*/
+  color: var(--cor5); /*P mudar a cor da fonte quando passar o mouse*/
+}
+
+main {
+  background-color: white; /**/
+  padding: 20px; /**/
+
+  min-width: 300px; /**/
+  max-width: 800px; /**/
+  margin: auto; /* descolando o main do menu*/
+  margin-bottom: 30px; /*Descolando o main do roda pé*/
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.399); /*Sombra*/
+  border-radius: 0px 0px 10px 10px; /*Arredondando as bordas em baixo*/
+
+}
+
+main img.pequena {
+  max-width: 350px; /*pq a img já é pequena*/
+  display: block; /*Tem que colocar o display p a img ir p o centro pq img n é bloco*/
+  margin: auto; /*colocando a img android bug no centro*/
+}
+
+main h1 {
+  color: var(--cor5);
+  font-family: var(--fonte-android);
+  font-weight: normal; /*Tirando o negrito*/
+  font-size: 1.8em;
+}
+
+main h2 {
+  font-family: var(--fonte-android);
+  font-weight: normal; /*Tirando o negrito*/
+  color: var(--cor4);
+  font-size: 1.3em;
+  background-image: linear-gradient(to right, var(--cor1), transparent);/*Degrade*/
+  text-indent: 8px;
+}
+
+main p {
+  margin: 15px 0px;
+  text-align: justify; /*Alinha os paragrafos*/
+  text-indent: 30px; /*Recuo ou indentação dos paragrafos*/
+  font-size: 1em; /*Dá uma engraçada na fonte*/
+  line-height: 2em; /* Espaços entre as linhas dos paragrafos*/
+}
+
+main strong {
+  color: var(--cor4);
+  font-weight: bold; /*coloca um borda na fonte*/
+}
+
+main a {
+  text-decoration: none; /*tirando o sublinhado dos links*/
+  font-weight: bold; /*Ele chama isso de negrito*/
+  color: var(--cor4);
+  background-color: var(--cor1);
+  padding: 2px 6px;
+}
+
+main a:hover {
+  text-decoration: underline;
+  color: var(--cor4);
+}
+
+main img {
+  width: 100%;
+}
+
+div.video {
+  background-color: var(--cor5);
+  margin: 0px -20px 30px -20px;
+  padding: 20px;
+  padding-bottom: 59%;
+  position: relative;
+}
+
+div.video > iframe {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+
+}
+
+aside {
+  background-color: var(--cor1);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.289);
+}
+
+aside > h3 {
+  background-color: var(--cor4);
+  color: white;
+  padding: 10px;
+  margin: -10px -10px 0px -10px; /*para crescer p esquerda*/
+  border-radius: 10px 10px 0px 0px;/*P arredondar as bordas de cima*/
+}
+
+aside ul { /*2714 é o código do check no site emojipedia e o 0020 é p dar sepaço*/
+  list-style-type: '\2714\0020\0020';
+  list-style-position: inside;/*Posição da lista*/
+  columns: 2; /*Divide em duas colunas*/
+
+}
+
+footer {
+  background-color: var(--cor5);
+  color: white;
+  text-align: center; /*Centralizando o texto do roda pé*/
+  font-size: 0.8em;
+  padding: 5px;
+}
+
+footer a {
+  color: white;
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: var(--cor1);
+}
